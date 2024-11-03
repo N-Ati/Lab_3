@@ -21,9 +21,19 @@ def get_employees_by_age_range(age_lower_limit, age_upper_limit):
 def calculate_average_salary():
     total = 0
     average = 0
+    count = 0
 
-    #add your implementation to calculate here
+    # Loop through each employee in the employee_data
+    for employee in employee_data:
+        total += employee["salary"]  # Add the salary of the current employee to total
+        count += 1  # Increment the count of employees
 
+    # Calculate average salary
+    if count > 0:
+        average = total / count  # Compute the average if count is greater than 0
+        average = round(average)
+    else:
+        average = 0  # Avoid division by zero, return 0 if there are no employees
 
     return average
 
